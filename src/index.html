@@ -10,13 +10,41 @@
     <!--titulo da aba da pagina-->
   </head>
   <body>
-    <div class="pageContent">
-      <h2 id="name">Nome do Pokemon</h2>
-      <img
-        id="img_sprite_front_default"
-        src="../assets/missingno.png"
-        alt="Imagem do Pokemon"
-      />
+    <div class="content">
+      <a href="https://pokeapi.co/"><img src="../assets/poke-api.png" alt="poke-api image logo"></a>
+      <!-- conteudo do pokemon e botões -->
+      <div class="pokemon-overall">
+        <!-- conteudo do pokemon -->
+        <div class="pokemon-name-image">
+          <!-- nome e imagem do pokemon -->
+          <div class="pokemon-name">
+            <h2 id="name">Nome do Pokemon</h2>
+          </div>
+          <div class="pokemon-image">
+            <img
+              id="img_sprite_front_default"
+              src="../assets/missingno.png"
+              alt="Imagem do Pokemon"
+            />
+          </div>
+        </div>
+        <div class="pokemon-stats">
+          <!-- status do pokemon -->
+          <h3>Status:</h3>
+          <div class="pokemon-stat">
+            <h4>Base Expirence</h4>
+            <p id="base-expirence" class="animation">0</p>
+          </div>
+          <div class="pokemon-stat">
+            <h4>Height</h4>
+            <p id="height" class="animation">0</p>
+          </div>
+          <div class="pokemon-stat">
+            <h4>Weight</h4>
+            <p id="weight" class="animation">0</p>
+          </div>
+        </div>
+      </div>
       <div>
         <button id="previous" onclick="previousPokemon()">Anterior</button>
         <button id="next" onclick="nextPokemon()">Proximo</button>
