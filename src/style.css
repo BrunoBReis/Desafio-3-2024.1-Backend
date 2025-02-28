@@ -1,24 +1,145 @@
+/* Variáveis de cores e estilos padrão */
+:root {
+  --background-color-content: #ffffff;  /* Cor de fundo do container principal */
+  --background-color: #f0f8ff;          /* Cor de fundo da página */
+  --primary-color: #007bff;             /* Cor principal para botões e textos */
+  --primary-color-dark: #0056b3;        /* Versão mais escura da cor principal para hover */
+  --secondary-color: #f7f7f7;           /* Cor secundária, usada em fundos de estatísticas */
+  --text-color: #333;                   /* Cor padrão do texto */
+}
+
+/* ---------- Reset de estilos ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Estilos gerais do Body ---------- */
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-div.pageContent {
-  margin-top: 5em;
-  height: 100%;
+.content > a > img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+/* ---------- Container Principal ---------- */
+.content {
+  /* background */
+  background-color: var(--background-color-content);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  /* posicao */
+  width: 50%;
+  max-width: 800px;
+  padding-top: 20px;
+  margin: 20px;
+  /* centralizacao */
   text-align: center;
 }
 
-img.img_sprite_front_default {
-  width: 96px;
-  height: 96px;
-  margin-block: 1em;
+/* ---------- Seção de Pokémon ---------- */
+/* Estilização do container principal */
+.pokemon-overall {
+  /* display */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  /* posicao */
+  margin-bottom: 20px;
 }
 
+.pokemon-name-image {
+  /* display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* posicao */
+  margin-bottom: 20px;
+}
+
+.pokemon-name h2 {
+  /* fonte */
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  /* posicao */
+  margin-bottom: 10px;
+}
+
+/* Imagem do Pokémon com efeito de hover */
+.pokemon-image img {
+  /* posicao */
+  width: 150px;
+  height: auto;
+  /* animacao */
+  transition: transform 0.3s ease;
+}
+.pokemon-image img:hover {
+  transform: scale(1.2);
+}
+
+/* Estatisitcas do Pokémon */
+.pokemon-stats {
+  /* display */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pokemon-stat {
+  /* background */
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  /* posicao */
+  text-align: left;
+  padding: 10px;
+}
+
+.pokemon-stat h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.pokemon-stat p {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ---------- Botões de Navegação ---------- */
 button#previous,
 button#next {
-  border: none;
+  border: none; /* removendo borda do botão */
   padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 18px;
+  margin: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#previous:hover,
+button#next:hover {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.05);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 768px) {
+  .pokemon-overall {
+    flex-direction: column;
+  }
 }
